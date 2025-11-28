@@ -1,0 +1,135 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+ */
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Geneva, sans-serif;
+}
+a {
+	color: #2772B0;
+}
+.wrapper {
+	width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	float: none;
+	background-color: #fff;
+}
+
+div img {
+	width: 100%;
+	max-width: 225px; 
+}
+
+/* grid system -- mobile first! */
+
+@media only screen and (max-width: 479px) {
+
+  .row-3 .col-3 {
+    order: -1;
+  }
+}
+
+/* flex contatiner */
+
+.row {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/* attribute selector to give some margin between columns and apply styles to flex items */
+
+[class*="col-"] {
+	margin-left: 4%;
+	flex: 0 0 92%;
+}
+
+/* Add background colors to see how much space each column is taking */
+
+.col-1 {
+	background-color: #6adfff;
+}
+
+.col-2 {
+	background-color: #ffa1e3;
+}
+
+.col-3 {
+	background-color: #fff476;
+}
+
+.col-4 {
+	background-color: #007430;
+}
+
+/* Tablet: basic 2-column behavior for col-1 & col-2 */
+@media only screen and (min-width: 479px) and (max-width: 1024px){
+  .col-1,
+  .col-2 {
+    flex: 0 0 44%;
+  }
+
+  /* row 3: both items full width */
+  .row-3 .col-1,
+  .row-3 .col-3 {
+    flex: 0 0 92%;
+  }
+
+  /* row 4: full width */
+  .row-4 .col-4 {
+    flex: 0 0 92%;
+  }
+
+  /* row 5: tablet layout
+     to have it ordered
+  */
+  .row-5 .col-1 {
+    flex: 0 0 44%;
+  }
+  .row-5 .col-2 {
+    flex: 0 0 92%;
+    order: -1; 
+  }
+
+  .row-6 .col-1{
+    flex: 0 0 92%;
+  }
+
+  .row-6 .col-3{
+    flex: 0 0 92%;
+  }
+}
+
+
+/* Desktop screen Sizes */
+@media only screen and (min-width: 1024px) {
+  
+  
+ 	.col-1 {
+		flex: 0 0 20%;
+	}
+
+  
+	.col-2 {
+		flex: 0 0 44%;
+	}
+
+
+	.col-3 {
+		flex: 0 0 68%;
+	}
+
+	.col-4 {
+		flex: 0 0 92%;
+	}
+
+}
