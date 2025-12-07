@@ -86,6 +86,10 @@ article img {
     gap: 1rem;
   }
 
+  .row-6 {
+        grid-template-rows: 700px;
+  }
+
   /* Allows to stretch accross 2, 3, or 4 columns*/
   .col-2 { grid-column: span 2; }
   .col-3 { grid-column: span 3; }
